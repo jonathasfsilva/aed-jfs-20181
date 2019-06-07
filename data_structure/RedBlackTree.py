@@ -77,3 +77,13 @@ class Tree(Node):
             self.postOrderTreeWalk(x.getLeft())
             self.postOrderTreeWalk(x.getRight())
             print(x.getData(), end = " ")
+
+    def search(self, k):
+        """Busca e retorna o no."""
+        x = self.getRoot()
+        while (x is not self.nil) and (k != x.getData()):
+            if k < x.getData():
+                x = x.getLeft()
+            else:
+                x = x.getRight()
+        return x
