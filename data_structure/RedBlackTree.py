@@ -56,3 +56,24 @@ class Tree(Node):
                     x = father
                     father = x.getParent()
                     return father
+
+    def preOrderTreeWalk(self, x):
+        """Plota arvore em preOrdem."""
+        if x is not self.nil:
+            print(x.getData(), end = " ")
+            self.preOrderTreeWalk(x.getLeft())
+            self.preOrderTreeWalk(x.getRight())
+
+    def inOrderTreeWalk(self, x):
+        """Plota arvore em ordem."""
+        if x is not self.nil:
+            self.inOrderTreeWalk(x.getLeft())
+            print(x.getData(), end = "\n")
+            self.inOrderTreeWalk(x.getRight())
+
+    def postOrderTreeWalk(self, x):
+        """Plota arvore em posOrdem."""
+        if x is not self.nil:
+            self.postOrderTreeWalk(x.getLeft())
+            self.postOrderTreeWalk(x.getRight())
+            print(x.getData(), end = " ")
