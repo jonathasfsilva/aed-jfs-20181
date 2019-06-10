@@ -103,3 +103,19 @@ class Tree(Node):
             x.getParent().setRight(y)
         y.setLeft(x)
         x.setParent(y)
+
+    def rightRotate(self, x):
+        """Rotaçao simples à direita."""
+        y = x.getLeft()
+        x.setLeft(y.getRight())
+        if x.getRight() is not self.nil:
+            y.getRight().setParent(x)
+        y.setParent(x.getParent())
+        if x.getParent() is self.nil:
+            self.setRoot(y)
+        elif x is x.getParent().getRight():
+            x.getParent().setRight(y)
+        else:
+            x.getParent().setLeft(y)
+        y.setRight(x)
+        x.setParent(y)
