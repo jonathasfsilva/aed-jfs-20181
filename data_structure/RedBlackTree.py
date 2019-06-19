@@ -48,6 +48,29 @@ class RBTree(Tree):
         y.setRight(x)
         x.setParent(y)
 
+    def insert(self, z):
+        """Recebe uma entrada e a insere na árvore."""
+        x = self.getRoot()
+        y = self.nil
+        z = Node(z)
+        while x is not self.nil:
+            y = x
+            if (z.getData() < x.getData()):
+                x = x.getLeft()
+            else:
+                x = x.getRight()
+        z.setParent(y)
+        if y is self.nil:
+            self.setRoot(z)
+        elif z.getData() < y.getData():
+            y.setLeft(z)
+        else:
+            y.setRight(z)
+        z.setLeft(self.nil)
+        z.setRight(self.nil)
+        z.setColor('red')
+        self.insertFixUp(z)
+
     def insertFixUp(self, z):
         while z.getParent().getColor() == 'red':
             if z.getParent() is z.getParent().getParent().getLeft():
