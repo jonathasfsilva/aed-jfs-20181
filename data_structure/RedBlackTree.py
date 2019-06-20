@@ -111,3 +111,29 @@ class RBTree(Tree):
         else:
             u.getParent().setRight(v)
         v.setParent(u.getParent())
+
+    def delete(self, z):
+        y = z
+        y_original_color = y.getColor()
+        if z.getLeft() is self.nil:
+            x = z.getRight()
+            self.transplant(z, z.getRight())
+        elif z.getRight() is self.nil:
+            x = z.getLeft()
+            self.transplant(z, z.getLeft())
+        else:
+            y = self.minimum(z.getRight())
+            y_original_color = y.getColor()
+            x = y.getRight()
+            if y.getParent() is z:
+                x.setParent(y)
+            else:
+                self.transplant(y, y.getRight())
+                y.setRight(z.getRight())
+                y.getRight().setParent(y)
+            self.transplant(z, y)
+            y.setLeft(z.getLeft())
+            y.getLeft().setParent(y)
+            y.setColor(z.getColor())
+        if y_original_color == 'black':
+            self.deleteFixUp(x)
