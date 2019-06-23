@@ -1,4 +1,10 @@
 import os
+from data_structure import RedBlackTree
+
+
+# ÁRVORE DE TÍTULOS
+titulos = RedBlackTree.RBTree()
+quantidade_cadastrada = 0
 
 os.system('clear')
 while True:
@@ -10,10 +16,9 @@ while True:
                       "5 - Finaliza cadastro de títulos" + '\n' + '\n'
                       "Escolha: "))
     if opcao == 1:
-        ## TODO: cadastrar
-        """
-        inserir na arvore vermelho e preto
-        """
+        os.system('clear')
+        titulos.insert(titulo.Titulo.cadastrar())
+        quantidade_cadastrada += 1
     elif opcao == 2:
         ## TODO: descadastrar
         """
