@@ -33,10 +33,16 @@ while True:
         else:
             print('Árvore vazia!')
     elif opcao == 3:
-        ## TODO: carregar
-        """
-        inserir atraves de um Arquivo
-        """
+        os.system('clear')
+        try:
+            arquivo = input('Nome do arquivo: ')
+            with open(arquivo) as lista:
+                for i in lista.readlines():
+                    titulos.insert(titulo.Titulo(i[0:8], i[8:11], i[11:-1]))
+                    quantidade_cadastrada += 1
+            print('\n')
+        except Exception as exc:
+            print('\nArquivo não encontrado!\n')
     elif opcao == 4:
         ## TODO: exibir
         """
