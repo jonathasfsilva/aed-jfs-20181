@@ -44,10 +44,9 @@ while True:
         except Exception as exc:
             print('\nArquivo não encontrado!\n')
     elif opcao == 4:
-        ## TODO: exibir
-        """
-        lista em ordem
-        """
+        os.system('clear')
+        titulos.inOrderTreeWalk(titulos.getRoot())
+        print('\n')
     elif opcao == 5:
         ## TODO: finalizar
         """
