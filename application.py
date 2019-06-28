@@ -65,8 +65,10 @@ while True:
         nome = input('Nome: ')
         candidatos[numero] = [nome, 0]
         numeros.append(numero)
-    elif opcao == 2:
-        # TODO: # Deletar candidato
+    elif opcao == 2:  # Deletar candidato
+        os.system('clear')
+        numero = int(input('Digite o número a ser apagado: '))
+        del candidatos[numero]
     elif opcao == 3:
         # TODO: # listar candidatos
     elif opcao == 4:  # encerrar o loop
