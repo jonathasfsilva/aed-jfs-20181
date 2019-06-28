@@ -59,8 +59,12 @@ while True:
                       "4 - Finalizar cadastro de candidatos" + '\n' + '\n' +
                       "Escolha: "))
 
-    if opcao == 1:
-        # TODO: # cadastrar canditado
+    if opcao == 1:  # cadastrar canditado
+        os.system('clear')
+        numero = int(input('Número: '))
+        nome = input('Nome: ')
+        candidatos[numero] = [nome, 0]
+        numeros.append(numero)
     elif opcao == 2:
         # TODO: # Deletar candidato
     elif opcao == 3:
