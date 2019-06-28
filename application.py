@@ -48,7 +48,23 @@ while True:
         titulos.inOrderTreeWalk(titulos.getRoot())
         print('\n')
     elif opcao == 5:
-        ## TODO: finalizar
-        """
-        passar pra proxima etapa: candidatos
-        """
+        os.system('clear')
+        break
+
+# CADASTRAMENTO DE CANDIDATOS
+while True:
+    opcao = int(input("1 - Cadastrar canditado" + '\n' +
+                      "2 - Deletar canditado" + '\n' +
+                      "3 - Listar candidatos" + '\n' +
+                      "4 - Finalizar cadastro de candidatos" + '\n' + '\n' +
+                      "Escolha: "))
+
+    if opcao == 1:
+        # TODO: # cadastrar canditado
+    elif opcao == 2:
+        # TODO: # Deletar candidato
+    elif opcao == 3:
+        # TODO: # listar candidatos
+    elif opcao == 4:  # encerrar o loop
+        os.system('clear')
+        break
