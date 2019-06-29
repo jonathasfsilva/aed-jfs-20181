@@ -69,8 +69,11 @@ while True:
         os.system('clear')
         numero = int(input('Digite o número a ser apagado: '))
         del candidatos[numero]
-    elif opcao == 3:
-        # TODO: # listar candidatos
+    elif opcao == 3:  # listar candidatos
+        os.system('clear')
+        for i in candidatos:
+            print(i, '-', candidatos[i][0])
+        print('\n')
     elif opcao == 4:  # encerrar o loop
         os.system('clear')
         break
